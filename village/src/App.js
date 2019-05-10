@@ -4,7 +4,7 @@ import {Route, withRouter, NavLink} from "react-router-dom";
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
-// import UpdateForm from './components/UpdateForm';
+import UpdateForm from './components/UpdateForm';
 import Smurfs from './components/Smurfs';
 
 
@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
-      // activeSmurf: {}
+      activeSmurf: {}
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -43,18 +43,18 @@ class App extends Component {
   this.props.history.push('/')
  }
 
-//  updateSmurf = updatedSmurf => {
-//    axios 
-//    .put(`http://localhost:3333/smurfs/${updatedSmurf.id}`, updatedSmurf)
-//    .then(res => this.setState({smurfs: res.data}))
-//    .catch(err => console.log(err));
-//    this.props.history.push('/')
-//  }
+ updateSmurf = updatedSmurf => {
+   axios 
+   .put(`http://localhost:3333/smurfs/${updatedSmurf.id}`, updatedSmurf)
+   .then(res => this.setState({smurfs: res.data}))
+   .catch(err => console.log(err));
+   this.props.history.push('/')
+ }
 
-//  setUpdateForm = smurf => {
-//    this.setState({activeSmurf: smurf});
-//    this.props.history.push('/update-form')
-//  }
+ setUpdateForm = smurf => {
+   this.setState({activeSmurf: smurf});
+   this.props.history.push('/update-form')
+ }
 
   render() {
     return (
@@ -73,13 +73,13 @@ class App extends Component {
       <Route 
       exact
       path="/"
-      render = { props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} /> }
+      render = { props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} setUpdateForm={this.setUpdateForm} /> }
         />
-      {/* <Route 
+      <Route 
       exact
       path= "/update-form"
       render={props => (<UpdateForm {...props} updateSmurf ={this.updateSmurf} activeSmurf={this.state.activeSmurf}/>)}
-      /> */}
+      />
       </div>
     );
   }
