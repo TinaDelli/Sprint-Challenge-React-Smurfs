@@ -43,7 +43,7 @@ class UpdateForm extends Component {
           <button type="submit">Edit This Smurf</button>
         </form>
         <div>
-            <h1>Editing This Smurf's Information</h1>
+            <h1>Editing This Smurf:</h1>
         <h3>{this.state.smurf.name}</h3>
       <strong>{this.state.smurf.height} tall</strong>
       <p>{this.state.smurf.age} smurf years old</p>

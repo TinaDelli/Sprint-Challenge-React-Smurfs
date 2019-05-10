@@ -15,8 +15,8 @@ const Smurf = props => {
           Edit Smurf
       </button>
         <button onClick={() => props.deleteSmurf(props.id)} className="md-button">
-                Delete Smurf
-            </button>
+            Delete Smurf
+        </button>
     </div>
   );
 };
