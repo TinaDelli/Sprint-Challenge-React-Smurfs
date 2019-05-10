@@ -7,7 +7,7 @@ const Smurf = props => {
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
       <button onClick={() => props.setUpdateForm(props)} className="edit-button">
-          Update Smurf
+          Edit Smurf
       </button>
         <button onClick={() => props.deleteSmurf(props.id)} className="md-button">
                 Delete Smurf

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class UpdateForm extends Component {
   state = {
-    //   name: '',
-    //   age: '',
-    //   height: ''
     smurf: this.props.activeSmurf
     };
   
@@ -19,17 +16,9 @@ class UpdateForm extends Component {
     event.preventDefault();
     // add code to create the smurf using the api
     this.props.updateSmurf(this.state.smurf);
-    console.log(this.state)
-
-    // this.setState({
-    //   name: '',
-    //   age: '',
-    //   height: ''
-    // });
   }
 
   render() {
-      console.log(this.props.activeSmurf)
     return (
       <div className="SmurfForm">
         <form onSubmit={this.handleSubmit}>
@@ -53,6 +42,12 @@ class UpdateForm extends Component {
           />
           <button type="submit">Edit This Smurf</button>
         </form>
+        <div>
+            <h1>Editing This Smurf's Information</h1>
+        <h3>{this.state.smurf.name}</h3>
+      <strong>{this.state.smurf.height} tall</strong>
+      <p>{this.state.smurf.age} smurf years old</p>
+        </div>
       </div>
     );
   }
