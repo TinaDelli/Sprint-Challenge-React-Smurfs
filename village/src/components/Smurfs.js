@@ -7,6 +7,11 @@ class Smurfs extends Component {
     return (
       <div className="Smurfs">
         <h1>Smurf Village</h1>
+        <img
+        className="home-image"
+        src="https://www.wired.com/wp-content/uploads/blogs/geekdad/wp-content/uploads/2011/04/smurfs-660x232.jpg"
+        alt=""
+      />
         <ul>
           {this.props.smurfs.map(smurf => {
             return (
@@ -16,6 +21,8 @@ class Smurfs extends Component {
                 age={smurf.age}
                 height={smurf.height}
                 key={smurf.id}
+                setUpdateForm ={this.props.setUpdateForm}
+                deleteSmurf = {this.props.deleteSmurf}
               />
             );
           })}
