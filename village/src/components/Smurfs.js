@@ -7,6 +7,11 @@ class Smurfs extends Component {
     return (
       <div className="Smurfs">
         <h1>Smurf Village</h1>
+        <img
+        className="home-image"
+        src="https://www.wired.com/wp-content/uploads/blogs/geekdad/wp-content/uploads/2011/04/smurfs-660x232.jpg"
+        alt=""
+      />
         <ul>
           {this.props.smurfs.map(smurf => {
             return (
