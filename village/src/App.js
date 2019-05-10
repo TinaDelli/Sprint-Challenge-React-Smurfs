@@ -4,7 +4,7 @@ import {Route, withRouter, NavLink} from "react-router-dom";
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
-import UpdateForm from './components/UpdateForm';
+// import UpdateForm from './components/UpdateForm';
 import Smurfs from './components/Smurfs';
 
 
@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
-      activeSmurf: {}
+      // activeSmurf: {}
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -33,6 +33,14 @@ class App extends Component {
    .then(res => this.setState({smurfs: res.data}))
    .catch(err => console.log(err));
    this.props.history.push('/')
+ }
+
+ deleteSmurf = id => {
+   axios 
+   .delete(`http://localhost:3333/smurfs/${id}`)
+   .then(res => this.setState({smurfs:res.data}))
+   .catch(err => console.log(err))
+  this.props.history.push('/')
  }
 
 //  updateSmurf = updatedSmurf => {
@@ -65,7 +73,7 @@ class App extends Component {
       <Route 
       exact
       path="/"
-      render = { props =>  <Smurfs {...props} smurfs={this.state.smurfs} setUpdateForm={this.setUpdateForm} /> }
+      render = { props =>  <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} /> }
         />
       {/* <Route 
       exact
