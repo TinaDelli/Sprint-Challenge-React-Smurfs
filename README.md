@@ -29,9 +29,18 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
+
+Client-Side Routing is when Javascript within a client app(web, desktop, etc) manages the data for that application within it's own memory. The browser usually has a longer initial load time to load the data but the browser doesnt need to refresh between routes. If additional data is needed that is not in memory, an api request is made, and simple json is returned, rather than an entire html page. Because less data is processed, routing between views is faster and smooth transitions and animation are easier to implement. 
+
+Server-Side Routing is when we naviagate to a web page. The website requests data for that webpage and the server returns a document, some html file or a template to the browser and the browser can render that page. This all happens on the server so each time we navigate to a new URL, a fresh page is loaded on the server then sent to the broser and the browser refreshes in order to render the new page.  A server-ride route will only request the data that's needed. No more, no less and it increases the SEO since it's been the standard for a long time. 
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+
+Post is the "C" in CRUD which stands for Create, Put is the "U" in CRUD and it stands for Update. Delete or Destroy is for the "D" in CRUD and it stands for Delete.   
+
 - [ ] Mention three tools we can use to make AJAX requests.
 
+Fetch API, Axios and jQuery are three tools we can use to make AJAX requests, with Axios being the most popular library for performing promise based HTTP requests from the browser or Node.js.
 
 ## Project Set Up
 
